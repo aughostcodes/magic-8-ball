@@ -3,11 +3,42 @@
     src: url('/magic-8-ball/norwester.otf') format('opentype');
 }
 
+@keyframes shake {
+
+    0%,
+    100% {
+        transform: translateX(0);
+    }
+
+    10%,
+    30%,
+    50%,
+    70%,
+    90% {
+        transform: translateX(-5px);
+    }
+
+    20%,
+    40%,
+    60%,
+    80% {
+        transform: translateX(5px);
+    }
+}
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     background: #000;
+}
+
+.animated {
+    animation-duration: 1s;
+}
+
+.shake {
+    animation-name: shake;
 }
 
 .container {

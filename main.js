@@ -33,8 +33,18 @@ function roll() {
 }
 
 function respond() {
-    // console.log(roll());
     display.textContent = responses[roll()];
 }
 
+function shakeDisplayAnimation() {
+    display.classList.add('animated');
+    display.classList.add('shake');
+}
+
+function stopShakeAnimation() {
+    display.classList.remove('animated');
+    display.classList.remove('shake');
+}
+
 askButton.addEventListener('click', respond);
+askButton.addEventListener('click', shakeDisplayAnimation);

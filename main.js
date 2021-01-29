@@ -1,5 +1,8 @@
 'use strict';
 
+const askButton = document.querySelector('.ask');
+const display = document.querySelector('.display');
+
 const responses = [
     'As I see it, yes.',
     'Ask again later.',
@@ -13,6 +16,7 @@ const responses = [
     'My reply is no.',
     'My sources say no.',
     'Outlook not so good.',
+    'Outlook good.',
     'Reply hazy, try again.',
     'Signs point to yes.',
     'Very doubtful.',
@@ -23,10 +27,14 @@ const responses = [
 ]
 
 function roll() {
-    let result = Math.floor(Math.random() * Math.floor(20));
-    return result;
+    let max = 19;
+    let min = 0;
+    return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
 function respond() {
-    console.log(responses[roll()]);
+    // console.log(roll());
+    display.textContent = responses[roll()];
 }
+
+askButton.addEventListener('click', respond);
